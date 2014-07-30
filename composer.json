@@ -1,0 +1,21 @@
+{
+    "name": "scyzoryck/reaper",
+    "description": "An extension for erpk/harvester. It allow to send a message to erepublik MU Chatroom",
+	"license": "MIT",
+    "require": {
+        "php": ">=5.3.0",
+        "erpk/harvester": "*"
+    },
+    "authors": [
+        {
+            "name": "scyzoryck",
+            "email": "marcin.czarnecki@klubfocus.pl"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": {
+            "Scyzoryck\\Reaper": "src/"
+        }
+    }
+}
