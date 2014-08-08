@@ -1,7 +1,7 @@
 Reaper
 ======
 
-**Reaper** is an extension for [erpk/harvester](https://github.com/erpk/harvester/). It add some new futures for **Harvester**.
+**Reaper** is an extension for [erpk/harvester](https://github.com/erpk/harvester/). It add some new features for **Harvester**.
 
 
 Installation
