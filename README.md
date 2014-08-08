@@ -10,9 +10,11 @@ Installation
 The best way to install Reaper is through [Composer](http://getcomposer.org/).
 
 If you have installed Harvester, you have to run following command in your project directory:
+
 ``` php composer.phar require scyzoryck/reaper master-dev ```
 
 Else create file `composer.json` file in your project directory:
+
 ```json
 {
     "minimum-stability": "dev",
@@ -21,11 +23,12 @@ Else create file `composer.json` file in your project directory:
     }
 }
 ```
-End run command
+And run command
+
 ``` php composer.phar install ```
 
 Modules
-=======
+-------
 
 ###Chat
 Allows to send messages via erepublik chat. 
@@ -40,7 +43,7 @@ $module->sendMessage('Black is white');
 //get last used color. 
 echo $module->getColor();
 ```
-Default colors using by erepublik chat are: 2F2F2F, 45D7D7, 4545D7, 8ED745, D745D, 8E8E8E, 407D40, 45D745, 7D4040, 40407D, 7D7D40, D7A045, 7D407D, D74545, BDBDBD, 407D7D, DC93DC and D7D745, but it's working with all hex color codes. 
+Default colors using by erepublik chat are: *2F2F2F*, *45D7D7*, *4545D7*, *8ED745*, *D745D*, *8E8E8E*, *407D40*, *45D745*, *7D4040*, *40407D*, *7D7D40*, *D7A045*, *7D407D*, *D74545*, *BDBDBD*, *407D7D*, *DC93DC* and *D7D745*, but it's working with all hex color codes. 
 
 If you want to send message to other room you can use:
 ```php
