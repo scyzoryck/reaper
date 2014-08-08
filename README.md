@@ -33,7 +33,7 @@ Modules
 ###Chat
 Allows to send messages via erepublik chat. 
 ```php
-use scyzoryck\Reaper\Module\ChatModule;
+use Scyzoryck\Reaper\Module\Chat\ChatModule;
 
 $module = new ChatModule;
 //set message color to blue (#45d7d7)
