@@ -19,7 +19,7 @@ Else create file `composer.json` file in your project directory:
 {
     "minimum-stability": "dev",
     "require": {
-      "scyzoryck/reaper": "*"
+      "scyzoryck/reaper": "master-dev"
     }
 }
 ```
@@ -53,5 +53,16 @@ $module->sendMessage('blablabla');
 //get current room id
 echo $module->getCurrentRoomId(); // if you didn't set any roomId it will display MU room id
 ```
+###Military 
+This module extends MilitaryModule from [erpk/harvester](https://github.com/erpk/harvester/). New features is setting MUDO. 
+```php
+use Scyzoryck\Reaper\Module\Military\MilitaryModule;
 
+$module = new MilitaryModule;
+//firstly set your military unit ID
+$module->setMilitaryUnitId(12345);
+//next set battle with id 654321 as MUDO
+$module->setMUDO(654321);
+```
+If MUDO can't be change a `CannotChangeMUDOExpection` is thrown. 
 
