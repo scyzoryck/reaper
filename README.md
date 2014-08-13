@@ -78,6 +78,6 @@ $MUDO->setMilitaryUnitId(12345);
 //get available campaigns to set as MUDO
 $MUDO->getAvailableCampaigns(); //return array
 //next set battle with id 654321 as MUDO
-$MUDO->setDayliOrder(654321);
+$MUDO->setDailyOrder(654321);
 ```
 

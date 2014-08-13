@@ -14,7 +14,7 @@ class MUDOModule extends Module
 {
     protected $militaryUnitId;
     
-    public function setDayliOrder($battleId)
+    public function setDailyOrder($battleId)
     {
         $this->filter($battleId, 'id');
         $this->getClient()->checkLogin();
