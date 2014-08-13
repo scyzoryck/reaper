@@ -11,14 +11,13 @@ class Filter extends ErpkFilter
 	 *	erpkChat.chatDataFeedStatus = 1;
 	 *  output array
     */
-    public static function extractJSObiect($name, $requestedPage)
+    public static function extractJSObiect($name, $html)
     {
-        preg_match_all( "/$name\.(.+) = (.+);/", $requestedPage->getBody(), $reg);
+        preg_match_all( "/$name\.(.+) = (.+);/", $html, $reg);
         $arr = array_combine($reg[1], $reg[2]);
         array_walk($arr, function(&$val, $key) {
-            $val = str_replace("'", '', $val);
+            $val = str_replace(array("'", '"'), '', $val);
         });
         return $arr;
     }
-    
 }

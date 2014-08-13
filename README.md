@@ -35,7 +35,7 @@ Allows to send messages via erepublik chat.
 ```php
 use Scyzoryck\Reaper\Module\Chat\ChatModule;
 
-$module = new ChatModule;
+$module = new ChatModule($client);
 //set message color to blue (#45d7d7)
 $module->setColor('45d7d7');
 //send message "Black is white" to military unit chat
@@ -54,15 +54,30 @@ $module->sendMessage('blablabla');
 echo $module->getCurrentRoomId(); // if you didn't set any roomId it will display MU room id
 ```
 ###Military 
+*This module is depraceted. It'll be removed in the next version of Reaper. Use [MUDO Module](https://github.com/scyzoryck/reaper#mudo) instead of it.*
 This module extends MilitaryModule from [erpk/harvester](https://github.com/erpk/harvester/). New features is setting MUDO. 
 ```php
 use Scyzoryck\Reaper\Module\Military\MilitaryModule;
 
-$module = new MilitaryModule;
+$module = new MilitaryModule($client);
 //firstly set your military unit ID
 $module->setMilitaryUnitId(12345);
 //next set battle with id 654321 as MUDO
 $module->setMUDO(654321);
 ```
 If MUDO can't be change a `CannotChangeMUDOExpection` is thrown. 
+
+###MUDO
+This module allows to change MUDO.
+```php
+use Scyzoryck\Reaper\Module\MUDO\MUDOModule;
+
+$MUDO = new MUDOModule($client);
+//firstly set your military unit ID
+$MUDO->setMilitaryUnitId(12345);
+//get available campaigns to set as MUDO
+$MUDO->getAvailableCampaigns(); //return array
+//next set battle with id 654321 as MUDO
+$MUDO->setDayliOrder(654321);
+```
 
