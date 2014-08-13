@@ -111,7 +111,7 @@ class MUDOModule extends Module
             $fightFor = $countries->findOneByName($fightForName);
             $result[] = array( 
                                 'campaign' => $campaign,
-                                'figthFor' => $fightFor,
+                                'fightFor' => $fightFor,
                              );
         }
         
