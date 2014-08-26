@@ -14,6 +14,14 @@ class MUDOModule extends Module
 {
     protected $militaryUnitId;
     
+    public function getChangesLeft()
+    {
+        $this->getClient()->checkLogin();
+        $request = $this->getClient()->get('main/group-show/' . $this->getMilitaryUnitId() . '?page=1');
+        $response = $request->send();
+        return $this->extractChangesLeft($response->getBody());
+    }
+    
     public function setDailyOrder($battleId)
     {
         $this->filter($battleId, 'id');
@@ -114,7 +122,7 @@ class MUDOModule extends Module
                                 'fightFor' => $fightFor,
                              );
         }
-        
+        //$result['changesLeft'] = $this->extractChangesLeft($response->getBody());
         return $result;
     }
     
@@ -132,5 +140,14 @@ class MUDOModule extends Module
             $this->filter($id, 'id');
             $this->militaryUnitId = $id;
             return $this;
+    }
+    
+    protected function extractChangesLeft($html)
+    {
+        if (!preg_match('/\( (\d+) changes left for today \)/', $html, $matches))
+        {
+            throw new ScrapeException;
+        }
+        return $matches[1];
     }
 }

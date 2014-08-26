@@ -79,5 +79,7 @@ $MUDO->setMilitaryUnitId(12345);
 $MUDO->getAvailableCampaigns(); //return array
 //next set battle with id 654321 as MUDO
 $MUDO->setDailyOrder(654321);
+//get number of changes left
+$MUDO->getChangesLeft();
 ```
 
