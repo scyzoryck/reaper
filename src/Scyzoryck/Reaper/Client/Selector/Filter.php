@@ -11,7 +11,7 @@ class Filter extends ErpkFilter
 	 *	erpkChat.chatDataFeedStatus = 1;
 	 *  output array
     */
-    public static function extractJSObiect($name, $html)
+    public static function extractJSObject($name, $html)
     {
         preg_match_all( "/$name\.(.+) = (.+);/", $html, $reg);
         $arr = array_combine($reg[1], $reg[2]);

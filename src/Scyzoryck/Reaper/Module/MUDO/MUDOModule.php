@@ -9,7 +9,6 @@ use Scyzoryck\Reaper\Module\MUDO\Exception\NoMUIdException;
 use Scyzoryck\Reaper\Module\MUDO\Exception\CannotChangeMUDOException;
 use Scyzoryck\Reaper\Client\Selector\Filter;
 
-
 class MUDOModule extends Module
 {
     protected $militaryUnitId;
@@ -72,7 +71,7 @@ class MUDOModule extends Module
         foreach ($allBattlesJS as $battleJS)
         {
             preg_match('/allBattles\[\"(\d+)\"\]/', $battleJS, $matches);
-            $allBattles[$matches[1]] = Filter::extractJSObiect('tempBattle', $battleJS);
+            $allBattles[$matches[1]] = Filter::extractJSObject('tempBattle', $battleJS);
         }
         
         $regions = $this->getEntityManager()->getRepository('Erpk\Common\Entity\Region');
